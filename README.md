@@ -89,7 +89,7 @@ jQuery
 
 #### Libs & Stuff
 [animate.css](https://daneden.github.io/animate.css/)  
-**Google Fonts** - (Playfair Display, Source Sans Pro & Open Sans)  
+**Google Fonts** - (Playfair Display & Open Sans)  
 [Fontawesome](http://fortawesome.github.io/Font-Awesome/) - icons
 
 #### CDN
