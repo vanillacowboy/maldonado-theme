@@ -1,0 +1,17 @@
+{{ entries:pagination folder="blog" limit="5" taxonomy="yes" }}
+  {{ if total_pages > 1 }}
+  <section class="pagination-block">
+    <div class="next-prev-container">
+      {{ if previous_page }}
+        <a href="{{ previous_page }}" class="button small gray prev-posts-link">&larr; &nbsp;<span>Newer</span></a>
+      {{ endif }}
+      {{ if next_page }}
+        <a href="{{ next_page }}" class="button small gray next-posts-link"><span>Older</span> &nbsp; &rarr;</a>
+      {{ endif }}
+    </div>
+    <div class="page-count-container">
+      <div class="page-number"> {{ current_page }} <span class="of">of</span> {{ total_pages }}</div>
+    </div>
+  </section>
+  {{ endif }}
+{{ /entries:pagination }}

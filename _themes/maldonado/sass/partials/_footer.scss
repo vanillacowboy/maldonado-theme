@@ -1,0 +1,173 @@
+// --------------------------------------------------------------------------
+//  Footer
+// --------------------------------------------------------------------------
+
+.site-footer {
+  @extend %block;
+  @include block-padding();
+  @include block-color();
+
+  border-top: 1px solid $border-on-gray;
+}
+
+// --------------------------------------------------------------------------
+//  Footer Columns
+// --------------------------------------------------------------------------
+
+@mixin footer-col-settings {
+  text-align: center;
+  margin-bottom: $space;
+
+  @include breakpoint($portrait) {
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+.footer-main {
+  min-height: em(300);
+
+  .col-1-3 {
+    @include footer-col-settings;
+
+    a {
+      font-weight: $base-font-weight;
+    }
+  }
+
+  .col-2-3 {
+    @include footer-col-settings;
+  }
+
+  .col-3-3 {
+    margin-bottom: $space;
+  }
+
+  @include breakpoint($portrait) {
+    .col-1-3 {
+      @include column(3/12);
+    }
+
+    .col-2-3 {
+      @include column(5/12);
+    }
+
+    .col-3-3 {
+      @include column(4/12);
+    }
+  }
+}
+
+//  Navigation
+// ----------------------------------------------
+.footer-nav {
+  @include reset-list;
+}
+
+.footer-misc-links {
+  ul {
+    list-style: none;
+  }
+}
+
+//  Social
+// ----------------------------------------------
+
+@mixin footer-icon-color($color) {
+  color: $mal-dark;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: lighten($color, 10%);
+  }
+}
+
+.footer-social {
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  i {
+    font-size: em(36);
+    margin: 0.2em;
+    color: $mal-dark;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  //Different color hovers
+  //Uncomment this if you want to use it.
+
+  // .fa-github-alt {
+  //   @include footer-icon-color(#1a1a1a);
+  // }
+
+  // .fa-fa-instagram {
+  //   @include footer-icon-color(#1a1a1a);
+  // }
+
+  // .fa-dribbble {
+  //   @include footer-icon-color(#C92D62);
+  // }
+
+  // .fa-twitter-square {
+  //   @include footer-icon-color(#55ACEE);
+  // }
+
+  // .fa-facebook-official {
+  //   @include footer-icon-color(#3A5795);
+  // }
+
+  // .fa-vimeo-square {
+  //   @include footer-icon-color(#1BB6EC);
+  // }
+
+  // .fa-youtube-play {
+  //   @include footer-icon-color(#CC181E);
+  // }
+
+  // .fa-linkedin-square {
+  //   @include footer-icon-color(#0077B5);
+  // }
+
+  // .fa-tumblr-square {
+  //   @include footer-icon-color(#3E5577);
+  // }
+
+  // .fa-twitch {
+  //   @include footer-icon-color(#6441A5);
+  // }
+
+  // .fa-spotify {
+  //   @include footer-icon-color(#1ED75F);
+  // }
+
+  // .fa-behance {
+  //   @include footer-icon-color(#319DD4);
+  // }
+
+  // .fa-codepen {
+  //   @include footer-icon-color(#000000);
+  // }
+
+  // .fa-vine {
+  //   @include footer-icon-color(#00BF8F);
+  // }
+}
+
+// --------------------------------------------------------------------------
+//  Copyright Block
+// --------------------------------------------------------------------------
+
+.footer-copyright {
+  margin-top: $space;
+  text-align: center;
+  min-height: em(100);
+  font-family: $meta-font;
+}

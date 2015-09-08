@@ -1,0 +1,23 @@
+<article class="entry-item three-col">
+  {{ if entry_image }}
+    <a href="{{ url }}"><img src="{{entry_image}}" class="entry-image"></a>
+  {{ /if }}
+  <div class="entry-content">
+
+    <div class="entry-meta">
+      <div class="meta-item"><span class="meta-label">posted:</span> <span class="meta-date">{{ date }}</span></div>
+      {{ if categories_url_list }}
+      <div class="meta-item"><span class="meta-label">category:</span> {{ categories_url_list }}</div>
+      {{ /if }}
+    </div>
+
+    <h2 class="entry-title"><a href="{{ url }}">{{ title }}</a></h2>
+
+    {{ if entry_intro }}
+      <div class="entry-lead">{{ truncate:words limit="40" }} {{ entry_intro|markdown }} {{ /truncate:words }}</div>
+    {{ /if }}
+
+    <a href="{{ url }}" class="read-more-link">Read More</a>
+
+  </div>
+</article>

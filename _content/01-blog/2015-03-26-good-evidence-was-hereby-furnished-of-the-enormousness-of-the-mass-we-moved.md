@@ -1,0 +1,10 @@
+---
+title: Good evidence was hereby furnished of the enormousness of the mass we moved
+entry_image: /assets/img/blog/resized/blogimage_3.jpg
+entry_intro: For, upon the great canal of Hang-Ho, or whatever they call it, in China, four or five laborers on the foot-path will draw a bulky freighted junk at the rate of a mile an hour; but this grand argosy we towed heavily forged along, as if laden with pig-lead in bulk.
+categories:
+  - Things
+---
+Darkness came on; but three lights up and down in the Pequod's main-rigging dimly guided our way; till drawing nearer we saw Ahab dropping one of several more lanterns over the bulwarks. Vacantly eyeing the heaving whale for a moment, he issued the usual orders for securing it for the night, and then handing his lantern to a seaman, went his way into the cabin, and did not come forward again until morning.
+
+Though, in overseeing the pursuit of this whale, Captain Ahab had evinced his customary activity, to call it so; yet now that the creature was dead, some vague dissatisfaction, or impatience, or despair, seemed working in him; as if the sight of that dead body reminded him that Moby Dick was yet to be slain; and though a thousand other whales were brought to his ship, all that would not one jot advance his grand, monomaniac object. Very soon you would have thought from the sound on the Pequod's decks, that all hands were preparing to cast anchor in the deep; for heavy chains are being dragged along the deck, and thrust rattling out of the port-holes. But by those clanking links, the vast corpse itself, not the ship, is to be moored. Tied by the head to the stern, and by the tail to the bows, the whale now lies with its black hull close to the vessel's and seen through the darkness of the night, which obscured the spars and rigging aloft, the two&mdash;ship and whale, seemed yoked together like colossal bullocks, whereof one reclines while the other remains standing.

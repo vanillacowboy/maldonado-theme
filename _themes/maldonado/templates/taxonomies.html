@@ -1,0 +1,52 @@
+<section class="taxonomy-bar-block">
+  <div class="container">
+
+    <div class="category-listing">
+      {{ taxonomy:listing folder="blog" type="categories" }}
+
+        {{ if first }}
+          <ul>
+        {{ endif }}
+
+        <li><a href="{{ url }}">{{ name }}</a> ({{ results }}), </li>
+
+        {{ if last }}
+          </ul>
+        {{ endif }}
+
+      {{ /taxonomy:listing }}
+    </div>
+
+  </div>
+</section>
+
+
+<section class="taxonomy-listing-block">
+  <div class="container">
+
+      <header class="taxonomy-listing-header center">
+        <h3>Category: <span>{{ taxonomy_name }}</span></h3>
+      </header>
+
+      <section class="entry-listing">
+
+        {{ entries:listing folder="blog" limit="5" taxonomy="true" }}
+
+          {{ if total_found == 0 }}
+            <div class="center">
+              <h4>Sorry, Can't find any blogposts in that category.</h4>
+            </div>
+          {{ else }}
+
+          {{ theme:partial src="entry_listing" use_context="true" }}
+
+          {{ /if }}
+
+        {{ /entries:listing }}
+
+      </section>
+
+      {{ theme:partial src="taxonomy_pagination" }}
+
+  </div>
+</section>

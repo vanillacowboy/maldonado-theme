@@ -1,0 +1,85 @@
+// --------------------------------------------------------------------------
+//  Variables
+// --------------------------------------------------------------------------
+
+// note that: Typography variables are found in "typography.scss"
+
+//Breakpoints
+$mobile-landscape: 480px;
+$portrait: 740px;
+$desktop: 960px;
+$large-desktop: 1800px;
+
+//breakpoint for large images in single post.
+$image-breakpoint: 920px;
+
+// Navigation
+$main-nav-breakpoint: 830px;
+
+//  Colors
+// ----------------------------------------------
+
+$base-bg-color:         #f8f8f8;
+$footer-bg-color:       #f0f0f0;
+
+//Maldonado color variables
+$mal-dark:              #1b1b1b;
+$mal-light-gray:        #f3f3f3;
+$mal-gray:              #999999;
+$mal-purple:            #a16eaf;
+$mal-teal:              #2C94B7;
+$mal-white:             #ffffff;
+$mal-codeblock:         #3b3b3b;
+
+//Main Colors
+$primary-color:         #D95127;
+$secondary-color:       #999999;
+
+$meta-color:            $mal-gray;
+$base-link-color:       $primary-color;
+
+//Color Scheme Colors - Accent Colors
+$default-accent:        $primary-color;
+$pink-accent:           #EE558D;
+$yellow-accent:         #bf8626;
+$blue-accent:           #3494cc;
+$teal-accent:           #469694;
+$red-accent:            #da3931;
+$green-accent:          #4ea349;
+
+$main-nav-bgcolor: $primary-color;
+
+$nav-toggle: $mal-gray;
+
+//  Paddings & Margins
+// ----------------------------------------------
+
+//Vertical Padding
+$v-padding-small:       em(25);
+$v-padding:             em(50);
+$v-padding-large:       em(80);
+
+$space:                 2em;    //default spacing.
+
+//Padding for "content-block"
+$default-padding:       $v-padding;
+$large-padding:         $v-padding-large;
+$small-padding:         $v-padding-small;
+$no-padding:            0;
+
+//  Column Max Widths
+// ----------------------------------------------
+
+$single-column:         46em; //default with for a single column //45em or 50.000rem;
+$image-pull-column:     ($single-column + 10em); //images in blogposts "pulled to the left".
+
+//  Borders
+// ----------------------------------------------
+
+$border-on-white:       #f0f0f0;
+$border-on-gray:        #e8e8e8; 
+
+//  Misc
+// ----------------------------------------------
+
+$border-radius: em(3);

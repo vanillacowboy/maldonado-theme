@@ -1,0 +1,41 @@
+{{ theme:partial src="blog_action_bar" }}
+
+<section class="full-post-block">
+
+  <div class="image-column">
+    {{ if entry_image }}
+      <img src="{{entry_image}}" class="entry-image">
+    {{ /if }}
+  </div>
+
+  <div class="container">
+
+    <article class="full-entry">
+      <header class="full-entry-header">
+        <div class="full-entry-meta">
+          <div class="meta-item"><span class="meta-label">posted:</span> <span class="meta-date">{{ date }}</span></div>
+          {{ if categories_url_list }}
+          <div class="meta-item"><span class="meta-label">category:</span> {{ categories_url_list }}</div>
+          {{ /if }}
+        </div>
+
+        <h1 class="full-entry-title">{{ title }}</h1>
+        {{ if entry_intro }}
+          <div class="lead">{{ entry_intro|markdown }}</div>
+        {{ /if }}
+      </header>
+
+      <section class="full-entry-content">
+        {{ content }}
+      </section>
+
+    </article>
+
+    {{ if show_comments }}
+    <section class="disqus-container">
+      {{ disqus:comments account="{ disqus_account }" }}
+    </section>
+    {{ /if }}
+
+  </div>
+</section>

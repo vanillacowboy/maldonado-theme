@@ -1,0 +1,36 @@
+{{ if intro_title or intro_text }}
+<section class="page-intro-block">
+  <div class="container">
+
+    <div class="block-title">
+      <h1>{{ intro_title }}</h1>
+      <div class="intro-text">{{ intro_text|markdown }}</div>
+    </div>
+
+  </div>
+</section>
+{{ /if }}
+
+<section class="blog-listing-block">
+  <div class="container">
+
+    <section class="entry-listing">
+
+      {{ entries:listing folder="blog" limit="6" }}
+
+        {{ if total_found == 0 }}
+          <div class="center"><h4>Sorry, No blog posts added yet.</h4></div>
+        {{ else }}
+
+          {{ theme:partial src="entry_listing" use_context="true" }}
+
+        {{ /if }}
+
+      {{ /entries:listing }}
+
+    </section>
+
+    {{ theme:partial src="blog_pagination" }}
+
+  </div>
+</section>

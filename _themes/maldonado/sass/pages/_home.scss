@@ -1,0 +1,23 @@
+// --------------------------------------------------------------------------
+//  Home
+// --------------------------------------------------------------------------
+
+.home-blog-listing-block {
+  @extend %block;
+  @include block-padding($default-padding, $default-padding);
+  @include fade-in;
+
+  @include breakpoint($portrait) {
+    .entry-item {
+      @include column(1/2, $cycle: 2);
+    }
+  }
+}
+
+.home-content-block {
+  @extend %block;
+  @include block-padding($default-padding, $default-padding);
+  .container {
+    max-width: $single-column;
+  }
+}

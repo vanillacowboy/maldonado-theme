@@ -1,0 +1,139 @@
+hide: true
+
+fields:
+
+  slug:
+    hide: yes
+  content:
+    type: hidden
+
+  #section Divider
+  logo_section:
+    type: section
+    display: Site Name & Logo
+    instructions: "Here you can upload a logo. It will display to the left of the sitename in the header. It will be resized to a height of 100px. You may also choose to show either the logo, sitename or both, by checking the boxes below."
+
+  site_name_choice:
+    type: checkbox
+    display: Show Site Name
+    instructions:
+      above: "Check to show Site Name in header."
+
+  logo_choice:
+    type: checkbox
+    display: Show Logo
+    instructions:
+      above: "Check to show logo in header."
+
+  logo_image:
+    display: Site Logo
+    type: file
+    allowed: [png, gif, jpg, jpeg]
+    destination: assets/img/logo/   # make sure your folder is writable
+    instructions: Upload a site logo
+    resize:
+      height: 100
+
+  #section Divider
+  accent_color_section:
+    type: section
+    display: Accent Colors
+    instructions: "Set an accent color for the site. If you leave this blank the default color (#D95127) will be used as an accent color. Also the codeblock colors can be set here."
+
+  color_scheme_choice:
+    display: Pick a Color Scheme
+    type: select
+    default: Default
+    options:
+      default-scheme: Default
+      pink-scheme: Pink
+      yellow-scheme: Yellow
+      blue-scheme: Blue
+      teal-scheme: Teal
+      red-scheme: Red
+      green-scheme: Green
+
+  #section Divider
+  footer_nav_section:
+    type: section
+    display: Footer Navigation
+    instructions: "Enter content for the navigation section of the footer"
+
+  footer_content_one:
+    display: Footer Content Navigation
+    required: false
+    default:
+    height: 80px;
+    type: markitup
+
+  footer_nav_choice:
+    type: checkbox
+    display: Show Footer Navigation
+    instructions:
+      above: "Check to show Site Navigation in footer."
+
+  #section Divider
+  footer_icons_section:
+    type: section
+    display: Footer Social
+    instructions: "Enter content for the social section of the footer"
+
+  footer_content_two:
+    display: Footer Content Social
+    required: false
+    default:
+    height: 80px;
+    type: markitup
+
+  social_icons:
+    display: Social Icons
+    type: grid
+    starting_rows: 0
+    instructions: "Pick an Icon and add a link."
+    fields:
+      icon_link:
+        display: Icon link
+        type: text
+      icon_type:
+        display: Icon Image
+        type: select
+        default: Pick Icon
+        options:
+          - Pick Icon
+          - Github
+          - Dribbble
+          - Twitter
+          - Facebook
+          - Instagram
+          - Vimeo
+          - YouTube
+          - LinkedIn
+          - Tumblr
+          - Twitch
+          - Spotify
+          - Behance
+          - Codepen
+          - Vine
+
+  #section Divider
+  footer_misc_section:
+    type: section
+    display: Footer Misc
+    instructions: "Enter content for the misc section of the footer"
+
+  footer_content_three:
+    display: Footer Content Misc
+    required: false
+    default:
+    height: 80px;
+    type: markitup
+
+  #section Divider
+  analytics_section:
+    type: section
+    display: Google Analytics
+    instructions: "Enter Your Google Analytics ID."
+
+  analytics_id:
+    type: text
+    placeholder: Enter ID, "XXXX-XX-XX"

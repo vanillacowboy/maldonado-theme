@@ -1,0 +1,278 @@
+// --------------------------------------------------------------------------
+//  Mixins
+// --------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------
+//  Font mixins
+// --------------------------------------------------------------------------
+
+@mixin base-font-settings {
+  color: $base-font-color;
+  font-family: $base-font;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+}
+
+@mixin heading-settings {
+  color: $heading-font-color;
+  font-family: $heading-font;
+  font-style: normal;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  margin: 0 0 0.5em;
+  padding-top: 0.4em;
+}
+
+@mixin serif-font-settings {
+  color: $base-font-color;
+  font-family: $serif-font;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  margin: 0 0 0.5em;
+}
+
+// --------------------------------------------------------------------------
+//  Block Sections
+// --------------------------------------------------------------------------
+
+//block variables
+$block-white: $mal-white;
+
+//base block color
+@mixin block-color($bg-color: none) {
+  background-color: $bg-color;
+  color: text-color($bg-color);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: header-color($bg-color);
+    margin-top: 0; //remove all top margin
+  }
+}
+
+// set default top bottom padding of blocks
+// if no padding is specified - this is the default.
+@mixin block-padding($top: $default-padding, $bottom: $default-padding) {
+
+  //standard padding on mobile
+  padding-top: $v-padding;
+  padding-bottom: $v-padding;
+
+  //set padding kicks in on portrait
+  @include breakpoint($portrait) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+  }
+}
+
+//default settings for a block
+@mixin section-block {
+  @include cf;
+  padding: 0 1em;
+}
+
+//what should be extended
+%block {
+  @include section-block;
+}
+
+// Example
+
+// .default {
+//   @extend %block; //includes basic styles
+//   @include section(); //includes padding ex: "$large-padding, $small-padding"
+//   @include block-color(); //includes color of block and text ex: "$dark"
+// }
+
+// --------------------------------------------------------------------------
+//  Lists
+// --------------------------------------------------------------------------
+
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// --------------------------------------------------------------------------
+//  Fade in
+// --------------------------------------------------------------------------
+
+@mixin fade-in {
+  animation: fadein 1s;
+
+  @keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+// --------------------------------------------------------------------------
+//  Centering
+// --------------------------------------------------------------------------
+
+@mixin center-block {
+  max-width: $single-column;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+// --------------------------------------------------------------------------
+//  Images // Pull columns
+// --------------------------------------------------------------------------
+
+@mixin featured-image() {
+  max-width: $image-pull-column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// --------------------------------------------------------------------------
+//  Color Scheme Mixin
+// --------------------------------------------------------------------------
+
+@mixin color-scheme($color) {
+
+  ::selection {
+    background: lighten($color, 30%)
+  }
+
+  ::-moz-selection {
+    background: lighten($color, 30%)
+  }
+
+  a {
+    color: $color;
+
+    &:visited {
+      color: $color;
+    }
+
+    &:hover {
+      color: lighten($color, 20%);
+    }
+  }
+
+  .footer-social i:hover {
+    color: $color;
+  }
+
+  .meta-date {
+    color: $color;
+  }
+
+  .meta-item {
+    a {
+      color: $color;
+
+      &:hover {
+        color: lighten($color, 20%);
+      }
+    }
+  }
+
+  .taxonomy-listing-header {
+    span {
+      color: $color;
+    }
+  }
+
+  .next-prev-container .next-posts-link:hover, .next-prev-container .prev-posts-link:hover {
+    background-color: $color;
+  }
+
+  .main-nav {
+    background-color: $color;
+  }
+
+  .nav-list {
+    a {
+      color: #fff;
+
+      &.current {
+        background-color: darken($color, 5%);
+      }
+      &:hover {
+        color: lighten($color, 20%);
+        background-color: lighten($color, 2%);
+      }
+    }
+    @include breakpoint($main-nav-breakpoint) {
+      a {
+        color: $mal-dark;
+
+        &.current {
+          background-color: transparent;
+          border-bottom: 2px solid $color;
+        }
+
+        &:hover {
+          color: $color;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .read-more-link {
+    color: $mal-gray;
+    border-left: 2px solid $color;
+
+    &:visited {
+      color: $mal-gray;
+    }
+
+    &:hover {
+      color: $color;
+      text-decoration: none;
+    }
+  }
+
+  blockquote {
+    border-left: 2px solid $color;
+  }
+
+  //Don't change color of post headlines
+  .entry-title {
+    a {
+      color: $mal-dark;
+      &:hover {
+        color: lighten($mal-dark, 15%);
+      }
+    }
+  }
+
+  .site-name  {
+    color: $mal-dark;
+
+    &:visited {
+        color: $mal-dark;
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  //  Buttons
+  // --------------------------------------------------------------------------
+
+  .btn, button {
+    background-color: $color;
+    border-bottom: 4px solid darken($color, 10%);
+
+    &:hover {
+      background-color: lighten($color, 10%);
+      border-bottom: 4px solid lighten($color, 2%);
+    }
+
+    &:active {
+      background-color: darken($color, 10%);
+    }
+  }
+
+}

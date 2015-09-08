@@ -1,0 +1,55 @@
+// --------------------------------------------------------------------------
+//  Archives
+// --------------------------------------------------------------------------
+
+.archives-block {
+  @extend %block;
+  @include block-padding();
+}
+
+.archive-item {
+  padding: 0;
+  font-size: em(14);
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  @include fade-in;
+
+  @include breakpoint($portrait) {
+    display: inline-block;
+    width: 48%;
+    margin: 1%;
+    padding: 0 $space;
+  }
+
+  ul {
+    @include reset-list;
+  }
+
+  .day {
+    font-weight: 700;
+    display: block;
+    font-family: $serif-font;
+
+    @include breakpoint($portrait) {
+      width: 35%;
+      float: left;
+    }
+  }
+
+  li {
+    @include cf;
+    margin-bottom: 0.5em;
+  }
+
+  .archive-title {
+    font-weight: 400;
+
+    @include breakpoint($portrait) {
+      display: inline-block;
+      width: 65%;
+      float: left;
+    }
+  }
+
+}

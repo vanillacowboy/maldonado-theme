@@ -1,0 +1,35 @@
+{{ if intro_title or intro_text }}
+<section class="page-intro-block">
+  <div class="container">
+
+    <div class="block-title">
+      <h1>{{ intro_title }}</h1>
+      <div class="intro-text">{{ intro_text|markdown }}</div>
+    </div>
+
+  </div>
+</section>
+{{ /if }}
+
+
+<section class="category-listing-block">
+  <div class="container">
+
+    <div class="category-listing">
+      {{ taxonomy:listing folder="blog" type="categories" }}
+
+        {{ if first }}
+          <ul>
+        {{ endif }}
+
+        <li><a href="{{ url }}">{{ name }}</a> ({{ results }}), </li>
+
+        {{ if last }}
+          </ul>
+        {{ endif }}
+
+      {{ /taxonomy:listing }}
+    </div>
+
+  </div>
+</section>

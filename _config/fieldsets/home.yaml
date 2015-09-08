@@ -1,0 +1,49 @@
+title: Home Page
+
+fields:
+
+  _template:
+    display: template
+    default: home
+    type: hidden
+
+  #section Divider
+  home_intro_section:
+    type: section
+    display: Intro
+    instructions: An optional Intro Section for the home page.
+
+  intro_title:
+    display: Page Intro Title
+
+  intro_text:
+    type: markitup
+    required: false
+    display: Page Intro Text
+    height: 100px
+
+  content:
+    display: Page Content
+    required: false
+    type: markitup
+
+  #-----------------------------------------------------
+  # Meta Data
+  #-----------------------------------------------------
+
+  #section Divider
+  meta_data_section:
+    type: section
+    display: Meta Data Section
+    instructions: Use these fields if you want to override the default meta tags and standard page title. This will affect how search engines display results.
+
+  meta_title:
+    display: Meta Title (optional)
+    instructions: Enter a meta title. This title will overide the default title in search engine results
+    type: text
+
+  meta_description:
+    display: Meta Description (optional)
+    instructions: Enter a meta-description. This description will overide the default description in search engine results. The description is capped at 150 characters.
+    type: textarea
+    height: 50

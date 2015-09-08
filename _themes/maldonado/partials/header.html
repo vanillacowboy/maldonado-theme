@@ -1,0 +1,32 @@
+<header class="site-header">
+
+  {{ if {globals:logo_choice} }}
+    <a href="{{ _site_url }}" class="site-logo">
+      <img src="{{ globals:logo_image }}" alt="site logo">
+    </a>
+  {{ /if }}
+
+  {{ if {globals:site_name_choice} }}
+  <a href="{{ _site_url }}" class="site-name">
+    {{ _site_name }}
+  </a>
+  {{ /if }}
+
+  <i class="fa fa-bars hamburger-icon nav-toggle"></i>
+
+  <nav class="main-nav">
+
+    <i class="fa fa-times close-icon nav-toggle"></i>
+
+    <ul class="nav-list">
+      {{ nav from="/" max_depth="2" }}
+      <li>
+        <a href="{{ url }}" {{ if is_current || is_parent }} class="current"{{ endif }}>
+          {{ title }}
+        </a>
+      </li>
+      {{ /nav }}
+    </ul>
+  </nav>
+
+</header>

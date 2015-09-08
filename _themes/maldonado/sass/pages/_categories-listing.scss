@@ -1,0 +1,25 @@
+// --------------------------------------------------------------------------
+//  Categories Listing
+// --------------------------------------------------------------------------
+
+.category-listing-block {
+  @extend %block;
+  @include block-padding();
+}
+
+.category-listing {
+  text-align: center;
+  font-family: $meta-font;
+  text-transform: uppercase;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    color: #999999;
+    display: inline;
+  }
+}

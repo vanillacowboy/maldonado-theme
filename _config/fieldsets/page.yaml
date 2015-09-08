@@ -1,0 +1,68 @@
+title: Default Page
+
+fields:
+  _template:
+    display: Template
+    type: hidden
+    default: page
+
+  #section Divider
+  main_title_section:
+    type: section
+    display: Page Title
+    instructions: This is the title that will be visible on all pages. The "title" field (above) will be shown in the navigation while this is the "actual title". This field can be left blank if you wanted.
+
+  main_title:
+    display: Page Title
+
+  #section Divider
+  featured_image_section:
+    type: section
+    display: Featured Image
+    instructions: Add a featured image for this page. The image will be cropped to a width of 1040px.
+
+  featured_image:
+    display: Featured Image
+    type: file
+    allowed: [png, gif, jpg, jpeg]
+    destination: assets/img/pages/
+    resize:
+      width: 1140
+
+  #section Divider
+  content_section:
+    type: section
+    display: Content
+
+  page_intro:
+    display: Lead
+    required: false
+    type: markitup
+    height: 100px
+
+  content:
+    display: Page Content
+    required: false
+    default:
+    type: markitup
+
+  #-----------------------------------------------------
+  # Meta Data
+  #-----------------------------------------------------
+
+  #section Divider
+  meta_data_section:
+    type: section
+    display: Meta Data Section
+    instructions: Use these fields if you want to override the default meta tags and standard page title. This will affect how search engines display results.
+
+  meta_title:
+    display: Meta Title (optional)
+    instructions: Enter a meta title. This title will overide the default title in search engine results
+    type: text
+
+  meta_description:
+    display: Meta Description (optional)
+    instructions: Enter a meta-description. This description will overide the default description in search engine results. The description is capped at 150 characters.
+    type: textarea
+    height: 50

@@ -1,0 +1,27 @@
+// --------------------------------------------------------------------------
+//  Taxonomies
+// --------------------------------------------------------------------------
+
+.taxonomy-bar-block {
+  @extend %block;
+  @include block-padding($small-padding, $small-padding);
+  background-color: $mal-light-gray;
+
+  border-bottom: 1px solid $border-on-white;
+}
+
+.taxonomy-listing-block {
+  @extend %block;
+  @include block-padding();
+
+  min-height: 600px;
+}
+
+.taxonomy-listing-header {
+  padding-bottom: 1em;
+  margin-bottom: $space;
+
+  span {
+    color: $primary-color;
+  }
+}

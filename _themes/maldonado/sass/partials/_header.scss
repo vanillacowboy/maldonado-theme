@@ -1,0 +1,171 @@
+// --------------------------------------------------------------------------
+//  Header
+// --------------------------------------------------------------------------
+
+body {
+  //toggle this when nav is active.
+  &.nav-open {
+    overflow: hidden;
+  }
+}
+
+//  Logo & Site Name
+// ----------------------------------------------
+.site-header {
+  @include cf;
+  position: relative;
+  background-color: $mal-white;
+  min-height: 5em;
+  padding: 1em;
+  z-index: 10;
+
+  border-bottom: 1px solid $border-on-white;
+
+  @include breakpoint($main-nav-breakpoint) {
+    padding: 1em 3em;
+  }
+}
+
+.site-logo {
+  display: inline-block;
+  float: left;
+
+  img {
+    margin-right: 0.6em;
+    max-height: 3em;
+  }
+}
+
+.site-name {
+  color: $mal-dark;
+  float: left;
+  display: inline-block;
+  font-family: $serif-font;
+  font-size: 1.8em;
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: none;
+  }
+  &:visited {
+    color: $mal-dark;
+  }
+}
+
+.main-nav {
+  background-color: $main-nav-bgcolor;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  //move nav off page
+  transform: translateX(-100%);
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  &.close {
+    transform: translateX(-100%);
+  }
+
+  @include breakpoint($main-nav-breakpoint) {
+    position: static;
+    transform: translateX(0);
+  }
+
+  //animate CSS style
+  animation-duration: 0.2s;
+}
+
+.nav-toggle {
+  position: absolute;
+  top: 0.5em;
+  right: 0;
+  padding: 0.3em 0.5em;
+  cursor: pointer;
+  font-size: em(30);
+  color: $nav-toggle;
+
+  &:hover {
+    color: darken($nav-toggle, 30%);
+  }
+
+  &.close-icon {
+    color: $mal-white;
+  }
+
+  @include breakpoint($main-nav-breakpoint) {
+    display: none;
+  }
+}
+
+
+// --------------------------------------------------------------------------
+//  Nav List
+// --------------------------------------------------------------------------
+
+.nav-list {
+  @include cf;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 6em;
+
+  a {
+    display: block;
+    padding: 0.8em 1em;
+    font-weight: $heading-font-weight;
+    font-size: em(20);
+    font-family: $serif-font;
+    color: $mal-white;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: lighten($main-nav-bgcolor, 2%);
+    }
+
+    &.current {
+      background-color: darken($main-nav-bgcolor, 2%);
+    }
+  }
+
+  // On desktop
+  @include breakpoint($main-nav-breakpoint) {
+    margin-top: 0;
+    float: right;
+    display: inline-block;
+
+    li {
+      float: left;
+    }
+
+    a {
+      font-family: $heading-font;
+      text-transform: none;
+      font-weight: 400;
+      display: inline-block;
+      font-size: em(16);
+      padding: 0.3em;
+      margin-left: 1em;
+      margin-top: 6px;
+      color: $mal-dark;
+
+      &:hover {
+        background-color: transparent;
+        color: darken($main-nav-bgcolor, 2%);
+      }
+
+      &.current {
+      background-color: transparent;
+      border-bottom: 2px solid $main-nav-bgcolor;
+      }
+    }
+  }
+}

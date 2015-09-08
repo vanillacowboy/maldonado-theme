@@ -1,0 +1,49 @@
+// --------------------------------------------------------------------------
+//  Buttons
+// --------------------------------------------------------------------------
+
+@mixin solid-button($btn-color: $default-accent) {
+  display: inline-block;
+  font-family: $meta-font;
+  font-size: $base-font-size;
+  font-style: normal;
+  line-height: 1.4;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  background-color: $btn-color;
+  letter-spacing: 0.03em;
+  border-radius: $border-radius;
+  padding: 1em 1.4em;
+  color: #fff !important;
+  border-bottom: 4px solid darken($btn-color, 10%);
+
+  transition: background-color .3s ease-in-out;
+
+  i {
+    margin-right: 0.5em;
+  }
+
+  &:hover {
+    background-color: lighten($btn-color, 10%);
+  }
+
+  &:active {
+    background-color: darken($btn-color, 10%);
+  }
+
+  //button sizes
+  &.btn-large {
+    font-size: em(20);
+    padding: 1em 1.4em 0.9em;
+  }
+
+  &.btn-small {
+    font-size: em(12);
+    padding: 1em 1.4em 0.8em;
+  }
+}
+
+.btn,
+button  {
+  @include solid-button();
+}

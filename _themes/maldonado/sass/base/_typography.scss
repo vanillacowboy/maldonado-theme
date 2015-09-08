@@ -1,0 +1,171 @@
+// --------------------------------------------------------------------------
+//  Typography
+// --------------------------------------------------------------------------
+
+$base-font: "Open Sans", "Helvetica", "Arial", "sans-serif";
+$heading-font: "Playfair Display", "Georgia", "Times New Roman", "Times", "serif";
+$serif-font: "Playfair Display", "Georgia", "Times New Roman", "Times", "serif";
+// $meta-font: "Source Sans Pro", "Helvetica", "Arial", "sans-serif";
+$meta-font: "Open Sans", "Helvetica", "Arial", "sans-serif";
+
+//  Typography Variables
+// ----------------------------------------------
+
+$base-font-size:        1em;      //14px = 0.875em
+$letter-spacing:        0.1em;
+
+$base-font-color:       #4c4c4c;
+$heading-font-color:    #1a1a1a;
+
+$base-line-height:      1.6;
+$heading-line-height:   1.2;
+
+$base-font-weight:      400;
+$heading-font-weight:   700;
+
+%standard-heading {
+  @include heading-settings;      //found in mixins.scss
+}
+
+%standard-base-font {
+  @include base-font-settings;    //found in mixins.scss
+}
+
+%standard-serif-font {
+  @include serif-font-settings;   //found in mixins.scss
+}
+
+//  Here we go!
+// ----------------------------------------------
+
+html {
+  font-size: $base-font-size;
+
+  @include breakpoint($large-desktop) {
+    font-size: 120%;
+  }
+}
+
+body {
+  @include base-font-settings;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+.intro {
+  font-size: 1.4em;
+  padding-bottom: 0.5em;
+}
+
+.lead {
+  @extend %standard-serif-font;
+  font-size: em(20);
+  font-style: italic;
+}
+
+ul, ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+blockquote {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  border-top: 2px solid $primary-color;
+  border-bottom: 2px solid $primary-color;
+  padding: 1.5em 0;
+
+  @include breakpoint($mobile-landscape) {
+    padding: 0 0 0 $space;
+    border-top: none;
+    border-bottom: none;
+    border-left: 2px solid $primary-color;
+  }
+
+  @include breakpoint($portrait) {
+    margin-top: $space;
+    margin-bottom: $space + 1.5em;
+  }
+
+  p {
+    @extend %standard-serif-font;
+    font-size: em(20);
+    font-style: italic;
+  }
+}
+
+a {
+  color: $base-link-color;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: lighten($base-link-color, 10);
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: lighten($base-link-color, 10);
+  }
+
+  &:visited {
+    color: $base-link-color;
+  }
+}
+
+// --------------------------------------------------------------------------
+//  Headings
+// --------------------------------------------------------------------------
+
+h1,
+.heading1 {
+  @extend %standard-heading;
+  font-size: 2.125em;
+  letter-spacing: -0.03em;
+
+  @include breakpoint($portrait) {
+    font-size: 3.157em;
+  }
+}
+
+h2,
+.heading2 {
+  @extend %standard-heading;
+  font-size: 1.875em;
+
+  @include breakpoint($portrait) {
+    font-size: 2.369em;
+  }
+}
+
+h3,
+.heading3 {
+  @extend %standard-heading;
+  font-size: 1.777em;
+}
+
+h4,
+.heading4 {
+  @extend %standard-heading;
+  font-size: 1.333em;
+}
+
+h5,
+.heading5 {
+  @extend %standard-heading;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h6,
+.heading6 {
+  @extend %standard-heading;
+}
+
+small, .font-small {
+  font-size: 0.75em;
+}

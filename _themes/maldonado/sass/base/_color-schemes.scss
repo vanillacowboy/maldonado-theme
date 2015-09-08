@@ -1,0 +1,32 @@
+// --------------------------------------------------------------------------
+//  Color Schemes
+// --------------------------------------------------------------------------
+
+//  Add a class of "$color-scheme" to the body tag to change accent color
+body {
+
+  &.pink-scheme {
+    @include color-scheme($pink-accent);
+  }
+
+  &.yellow-scheme {
+    @include color-scheme($yellow-accent);
+  }
+
+  &.blue-scheme {
+    @include color-scheme($blue-accent);
+  }
+
+  &.teal-scheme {
+    @include color-scheme($teal-accent);
+  }
+
+  &.red-scheme {
+    @include color-scheme($red-accent);
+  }
+
+  &.green-scheme {
+    @include color-scheme($green-accent);
+  }
+
+}

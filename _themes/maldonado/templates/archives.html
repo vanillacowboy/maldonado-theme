@@ -1,0 +1,56 @@
+{{ if intro_title or intro_text }}
+<section class="page-intro-block">
+  <div class="container">
+
+    <div class="block-title">
+      <h1>{{ intro_title }}</h1>
+      <div class="intro-text">{{ intro_text|markdown }}</div>
+    </div>
+
+  </div>
+</section>
+{{ /if }}
+
+<section class="archives-block">
+  <div class="container">
+
+    <div class="archives-listing">
+
+      {{ entries:listing folder="blog" group_by_date="Y" }}
+
+      {{ if total_found == 0 }}
+          <div class="center">
+            <h3>Sorry. No blogposts added yet.</h3>
+          </div>
+      {{ else }}
+
+        {{ if grouped_date }}
+
+          {{ if !first }}
+            </ul>
+            </div>
+          {{ endif }}
+
+          <div class="archive-item">
+            <h2>{{ grouped_date }}</h2>
+            <ul>
+
+        {{ endif }}
+
+          <li>
+            <div class="day">{{ date }}</div> <a href="{{ url }}" class="archive-title"> {{ title }}</a>
+          </li>
+
+          {{ if last }}
+              </ul>
+              </div>
+          {{ endif }}
+
+      {{ /if }}
+
+      {{ /entries:listing }}
+
+    </div>
+
+  </div>
+</section>

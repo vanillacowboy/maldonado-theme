@@ -1,0 +1,15 @@
+// --------------------------------------------------------------------------
+//  Default page
+// --------------------------------------------------------------------------
+
+.default-page-block {
+  @extend %block;
+  @include block-padding($default-padding, $large-padding);
+  @include block-color();
+  @include fade-in;
+
+  .container {
+    max-width: $single-column;
+  }
+
+}

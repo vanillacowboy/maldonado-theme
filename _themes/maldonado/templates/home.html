@@ -1,0 +1,65 @@
+{{ if intro_title or intro_text }}
+<section class="page-intro-block">
+  <div class="container">
+
+    <div class="block-title">
+      <h1>{{ intro_title }}</h1>
+      <div class="intro-text">{{ intro_text|markdown }}</div>
+    </div>
+
+  </div>
+</section>
+{{ /if }}
+
+<section class="home-blog-listing-block">
+  <div class="container">
+
+    <section class="home-entry-listing">
+
+      {{ entries:listing folder="blog" limit="2" }}
+
+        {{ if total_found == 0 }}
+          <div class="center"><h4>Sorry, No blog posts added yet.</h4></div>
+        {{ else }}
+
+          <article class="entry-item">
+
+            {{ if entry_image }}
+              <a href="{{ url }}">
+                <img src="{{entry_image}}" class="entry-image">
+              </a>
+            {{ /if }}
+
+            <div class="entry-content">
+              <div class="entry-meta">
+                <div class="meta-item"><span class="meta-label">posted:</span> <span class="meta-date">{{ date }}</span></div>
+                {{ if categories_url_list }}
+                <div class="meta-item"><span class="meta-label">category:</span> {{ categories_url_list }}</div>
+                {{ /if }}
+              </div>
+
+              <h2 class="entry-title"><a href="{{ url }}">{{ title }}</a></h2>
+
+              {{ if entry_intro }}
+                <div class="entry-lead">{{ truncate:words limit="40" }} {{ entry_intro|markdown }} {{ /truncate:words }}</div>
+              {{ /if }}
+
+              <a href="{{ url }}" class="read-more-link">Read more</a>
+            </div>
+          </article>
+        {{ /if }}
+
+      {{ /entries:listing }}
+
+    </section>
+  </div>
+
+</section>
+
+{{ if content }}
+<section class="home-content-block">
+  <div class="container">
+    {{ content }}
+  </div>
+</section>
+{{ /if }}

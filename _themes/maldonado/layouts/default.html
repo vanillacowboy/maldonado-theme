@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {{ if meta_title }}
+      {{ meta_title }} | {{ _site_name }}
+    {{ else if }}
+      {{ title }} | {{ _site_name }}
+    {{ else }}
+      {{ _site_name }}
+    {{ /if }}
+  </title>
+
+  <link rel="shortcut icon" href="{{ theme:img src="favicon.ico" }}">
+  <link rel="shortcut icon" type="image/png" href="{{ theme:img src="favicon.png" }}">
+
+  <link rel="canonical" href="{{ permalink }}" />
+  <meta name="description" content="{{ if meta_description }} {{ meta_description|truncate:150 }} {{ else }} {{ page_intro}} {{ /if }}" />
+
+  <meta property="og:title" content="{{ if meta_title }} {{ meta_title }} {{ else }} {{ title }} {{ /if }}" />
+  <meta property="og:url" content="{{ permalink }}" />
+  <meta property="og:description" content="{{ if meta_description }} {{ meta_description|truncate:150 }} {{ else }} {{ page_intro}} {{ /if }}" />
+  <meta property="og:site_name" content="{{ _site_name }}" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ if meta_title }} {{ meta_title }} {{ else }} {{ title }} {{ /if }}" />
+  <meta name="twitter:description" content="{{ if meta_description }} {{ meta_description|truncate:150 }} {{ else }} {{ page_intro}} {{ /if }}" />
+  <meta name="twitter:url" content="{{ permalink }}" />
+
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700|Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+  <link rel="stylesheet" href="{{ theme:css }}">
+</head>
+<body class="{{ get_content from="/globals" show_drafts="yes" }}{{ color_scheme_choice }}{{ /get_content }}">
+
+  {{ theme:partial src="header" }}
+
+  <main class="main-site-wrapper">
+    {{ layout_content }}
+  </main>
+
+  {{ theme:partial src="footer" }}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+  <script src="{{ theme:js }}"></script>
+
+  {{ theme:partial src="analytics" }}
+
+</body>
+</html>

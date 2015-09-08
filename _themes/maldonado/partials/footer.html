@@ -1,0 +1,86 @@
+<footer class="site-footer">
+  <div class="container">
+
+    <section class="footer-main">
+
+      <div class="col-1-3">
+
+        <div class="footer-nav">
+          {{ get_content from="/globals" show_drafts="yes" }}
+            {{ footer_content_one|markdown }}
+          {{ /get_content }}
+
+          {{ if {globals:footer_nav_choice} }}
+            {{ nav from="/" max_depth="1" }}
+            <li>
+              <a href="{{ url }}">{{ title }}</a>
+            </li>
+            {{ /nav }}
+          {{ /if }}
+        </div>
+        
+      </div>
+
+      <div class="col-2-3">
+
+        <div class="footer-text-block">
+          {{ get_content from="/globals" show_drafts="yes" }}
+            {{ footer_content_two|markdown }}
+          {{ /get_content }}
+        </div>
+
+        <div class="footer-social">
+          {{ get_content from="/globals" show_drafts="yes" }}
+            {{ social_icons }}
+              <a href="{{ icon_link }}">
+                {{ if icon_type == "Github" }}
+                  <i class="fa fa-github-alt"></i>
+                {{ elseif icon_type == "Dribbble" }}
+                  <i class="fa fa-dribbble"></i>
+                {{ elseif icon_type == "Twitter" }}
+                  <i class="fa fa-twitter-square"></i>
+                {{ elseif icon_type == "Facebook" }}
+                  <i class="fa fa-facebook-official"></i>
+                {{ elseif icon_type == "Instagram" }}
+                  <i class="fa fa-instagram"></i>
+                {{ elseif icon_type == "Vimeo" }}
+                  <i class="fa fa-vimeo-square"></i>
+                {{ elseif icon_type == "YouTube" }}
+                  <i class="fa fa-youtube-play"></i>
+                {{ elseif icon_type == "LinkedIn" }}
+                  <i class="fa fa-linkedin-square"></i>
+                {{ elseif icon_type == "Tumblr" }}
+                  <i class="fa fa-tumblr-square"></i>
+                {{ elseif icon_type == "Twitch" }}
+                  <i class="fa fa-twitch"></i>
+                {{ elseif icon_type == "Spotify" }}
+                  <i class="fa fa-spotify"></i>
+                {{ elseif icon_type == "Behance" }}
+                  <i class="fa fa-behance"></i>
+                {{ elseif icon_type == "Codepen" }}
+                  <i class="fa fa-codepen"></i>
+                {{ elseif icon_type == "Vine" }}
+                  <i class="fa fa-vine"></i>
+                {{ /if }}
+              </a>
+            {{ /social_icons }}
+          {{ /get_content }}
+
+        </div>
+
+      </div>
+
+      <div class="col-3-3">
+        {{ get_content from="/globals" show_drafts="yes" }}
+          {{ footer_content_three|markdown }}
+        {{ /get_content }}
+      </div>
+
+    </section>
+
+    <section class="footer-copyright">
+      <small>Copyright &copy; {{ current_date format="Y" }} {{ _site_name }} | Powered by: <a href="http://statamic.com">Statamic</a>. Theme: <a href="https://github.com/thesherps">Maldonado</a> by <a href="http://galacticrobot.com">Galactic Robot</a></small>
+    </section>
+
+  </div>
+</footer>

@@ -1,0 +1,288 @@
+// --------------------------------------------------------------------------
+//  Blogposts
+// --------------------------------------------------------------------------
+
+@mixin full-entry-white-box {
+  padding: 0;
+
+  @include breakpoint($mobile-landscape) {
+    padding: 2em;
+    background-color: #fff;
+  }
+
+  @include breakpoint($portrait) {
+    padding: 2em 4em 4em 4em;
+  }
+}
+
+@mixin meta-label-settings {
+  font-family: $serif-font;
+  font-style: italic;
+  text-transform: none;
+}
+
+// --------------------------------------------------------------------------
+//  Entries Listing - On blogpage
+// --------------------------------------------------------------------------
+
+.blog-listing-block {
+  @extend %block;
+  @include block-padding($default-padding, $large-padding);
+  @include block-color();
+}
+
+.entry-listing {
+  margin: 0 auto;
+  @include fade-in;
+}
+
+.entry-content {
+  padding: $space;
+  background-color: $mal-white;
+
+  .entry-image {
+    margin-bottom: $space;
+  }
+}
+
+.entry-item {
+  border: 1px solid #f7f7f7;
+  margin-bottom: 1em;
+
+  //if default column layout
+  @include breakpoint($portrait) {
+    display: inline-block;
+    margin: 1%;
+    width: 48%;
+  }
+}
+
+.entry-title {
+  a {
+    text-decoration: none;
+    color: $mal-dark;
+
+    &:hover {
+      color: lighten($mal-dark, 15%);
+    }
+  }
+}
+
+.entry-meta {
+  font-family: $meta-font;
+  text-transform: uppercase;
+  color: $meta-color;
+  font-size: em(14);
+
+  padding-bottom: 1em;
+
+  .meta-label {
+    @include meta-label-settings;
+  }
+
+  .meta-item {
+    display: inline-block;
+    margin-right: 1em;
+
+    //unbold the links
+    a {
+      font-weight: 400;
+    }
+  }
+}
+
+.meta-date {
+  color: $primary-color;
+}
+
+.read-more-link {
+  color: $mal-gray;
+  font-family: $serif-font;
+  font-style: italic;
+  font-weight: 400;
+  padding-left: 0.5em;
+  border-left: 2px solid $primary-color;
+
+
+  &:visited {
+    color: $mal-gray;
+  }
+  &:hover {
+    color: $default-accent;
+    text-decoration: none;
+  }
+}
+
+// --------------------------------------------------------------------------
+//  Entries Listing - On blogpage
+//  Three Column layout
+// --------------------------------------------------------------------------
+
+.entry-item {
+
+  //if three column layout
+  &.three-col {
+
+    .entry-lead {
+      display: none;
+    }
+
+    .read-more-link {
+      display: none;
+    }
+
+    @include breakpoint($portrait) {
+      display: inline-block;
+      margin: 1%;
+      width: 31%;
+
+      //smaller headlines
+      .entry-title {
+        font-size: em(24);
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+//  Full Entries - Single Page
+// --------------------------------------------------------------------------
+
+.full-post-block {
+  @extend %block;
+  @include block-padding();
+  @include block-color();
+  @include fade-in;
+
+  .container {
+    max-width: $single-column;
+
+    //On larger screen sizes - make image expand column.
+    //Override standard image settings
+    @include breakpoint($image-breakpoint) {
+      img,
+      figure {
+      height: auto;
+      vertical-align: middle;
+      max-width: $image-pull-column;
+      margin-left: -5em;
+      }
+    }
+  }
+}
+
+.full-entry {
+  p > img {
+    padding: 1em 0;
+  }
+}
+
+pre {
+  max-width: $single-column;
+  background-color: $mal-codeblock;
+  padding: 1em;
+  margin: 1em 0;
+  code {
+    color: $mal-white;
+  }
+}
+
+.full-entry-meta {
+  font-family: $meta-font;
+  text-transform: uppercase;
+  color: $meta-color;
+  font-size: em(14);
+  padding: 1em 0 0 0;
+
+  .meta-label {
+    @include meta-label-settings;
+  }
+
+  .meta-item {
+    display: inline-block;
+    margin-right: 1em;
+
+    //unbold the links
+    a {
+      font-weight: 400;
+    }
+  }
+
+  @include breakpoint($portrait) {
+    margin-bottom: $space;
+    padding: 1em 0;
+  }
+}
+
+// --------------------------------------------------------------------------
+//  Next Prev Posts
+// --------------------------------------------------------------------------
+
+@mixin nex-prev-link {
+  display: inline-block;
+  background-color: $mal-white;
+  padding: 0.5em 1em;
+  color: $mal-dark;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $mal-white;
+  }
+}
+
+.pagination-block {
+  margin-top: $space;
+  padding: 0 1%;
+}
+
+.next-prev-container {
+  @include cf;
+
+  .next-posts-link {
+    @include nex-prev-link;
+    float: right;
+    span {
+      font-family: $serif-font;
+      font-style: italic;
+    }
+  }
+
+  .prev-posts-link {
+    @include nex-prev-link;
+    float: left;
+    span {
+      font-family: $serif-font;
+      font-style: italic;
+    }
+  }
+}
+
+.page-count-container {
+  position: relative;
+  text-align: center;
+}
+
+.page-number {
+  display: inline-block;
+  font-family: $meta-font;
+  font-size: em(18);
+
+  .of {
+    font-family: $serif-font;
+    font-style: italic;
+    margin: 0 0.3em;
+  }
+}
+
+// --------------------------------------------------------------------------
+//  Disqus Comments
+// --------------------------------------------------------------------------
+
+.disqus-container {
+  @include block-padding($large-padding, $large-padding);
+  margin-top: $large-padding;
+  border-top: 1px solid #E5E8E9
+}

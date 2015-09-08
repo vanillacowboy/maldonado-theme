@@ -1,0 +1,58 @@
+// --------------------------------------------------------------------------
+//  Layout
+// --------------------------------------------------------------------------
+
+//  Border Box everything! - http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+// ----------------------------------------------
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+//  Site Max Width
+// ----------------------------------------------
+$max-width: 60em;
+
+//  General Stuff
+// ----------------------------------------------
+
+body {
+  background-color: $footer-bg-color;
+}
+
+main {
+  position: relative;
+  background-color: $base-bg-color;
+  padding-bottom: $large-padding;
+  min-height: em(700px);
+}
+
+//  Containers
+// ----------------------------------------------
+.container {
+  @include center($max-width);
+  @include cf;
+}
+
+//  Misc
+// ----------------------------------------------
+
+//remove blue outline in chrome
+*:focus {
+  outline: 0;
+}
+
+//  Images
+// ----------------------------------------------
+
+//responsive images
+img,
+figure {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}

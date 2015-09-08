@@ -1,0 +1,57 @@
+// --------------------------------------------------------------------------
+//  Modules
+// --------------------------------------------------------------------------
+
+.banner-heading {
+  h1 {
+    color: $mal-white;
+  }
+}
+
+.image-column {
+  @include featured-image;
+  margin-bottom: $space;
+}
+
+//  Standard Content Block
+// ----------------------------------------------
+.content-block {
+  @extend %block;
+  @include block-padding();
+  @include block-color();
+}
+
+
+//  Standard Page Styles
+// ----------------------------------------------
+
+.main-page-content {
+  margin-top: $space;
+}
+
+// --------------------------------------------------------------------------
+//  Centering blocks
+// --------------------------------------------------------------------------
+
+.center {
+  @include center-block;
+}
+
+//  Intro Block
+// ----------------------------------------------
+
+.page-intro-block {
+  @extend %block;
+  padding-top: $default-padding;
+  padding-bottom: $no-padding;
+}
+
+.intro-text {
+  @extend %standard-serif-font;
+  font-size: em(20);
+  font-style: italic;
+}
+
+.block-title {
+  @include center-block;
+}

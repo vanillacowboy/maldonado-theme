@@ -1,0 +1,14 @@
+# --------------------------------------------------------------------------
+#  Maldonado Theme
+# --------------------------------------------------------------------------
+
+# Theme name
+theme_name: Maldonado
+
+# Comments + Disqus
+
+# Do you want to show the Disqus comment form?
+# You can activate it here if you've also downloaded the disqus plugin from: https://github.com/statamic/Plugin-Disqus
+# To enable comments: Change the "changeme" to your own Disqus Shortname and set show_comments to "yes"
+disqus_account: changeme
+show_comments: no
