@@ -10,5 +10,5 @@ meta_title: Welcome to Maldonado
 meta_description: This is a free statamic theme. Enjoy.
 ---
 <div style="text-align: center;">
-<a href="https://github.com/thesherps" class="btn btn-large"><i class="fa fa-arrow-circle-o-down"></i> download from github</a>
+<a href="https://github.com/galacticrobot" class="btn btn-large"><i class="fa fa-arrow-circle-o-down"></i> download from github</a>
 </div>
