@@ -109,12 +109,17 @@ I would love to hear if you use it for something somewhere & and shoot me an ema
 
 ## Some Screenshots
 
+#### Home
 [![](/assets/home.jpg)](Home)
 
+#### Post/Single Entry
 [![](/assets/post.jpg)](Post)
 
+#### Colors
 [![](/assets/colors.jpg)](Colors)
 
+#### Archives
 [![](/assets/archives.jpg)](Archives)
 
+#### Categories
 [![](/assets/categories.jpg)](Categories)
