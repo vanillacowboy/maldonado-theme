@@ -1,7 +1,6 @@
 # Maldonado Theme
 
-## Purpose
-**Maldonado** is a free simple blog theme made with simplicity in mind. Just the basics pretty much.  
+**Maldonado** is a free blog theme made with simplicity in mind. Just the basics pretty much.  
 It's made for the awesome [Statamic](http://statamic.com/) CMS, so to use it in the wild you do need to [buy a license from their website](https://store.statamic.com/).
 
 The **Maldonado** theme would work nicely as a simple journal/blog or maybe a small website and it's easily customized if you know your way around SASS and HTML (and Statamic).
@@ -102,7 +101,7 @@ So you could easily delete or switch out libs just by removing the link tags.
 Do what you wish with this theme.  
 Want to use it for your personal blog? **Cool!**. Like to use it as a starter theme? **Great!**. Want to chop it up, add/remove stuff and use it in client work? **sure, go for it!**  
 Feel free to use this theme anyway you want.
-You could if you wanted, refer to this theme/repo or me on you page somewhere. That would be cool.
+You could, if you wanted, refer to this theme/repo or me on you page somewhere, you don't have to but it would be cool if you did.
 
 I would love to hear if you use it for something somewhere & and shoot me an email if you find any bugs.
 
@@ -114,4 +113,8 @@ I would love to hear if you use it for something somewhere & and shoot me an ema
 
 [![](/assets/post.jpg)](Post)
 
+[![](/assets/colors.jpg)](Colors)
+
 [![](/assets/archives.jpg)](Archives)
+
+[![](/assets/categories.jpg)](Categories)
