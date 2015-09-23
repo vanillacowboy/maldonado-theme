@@ -100,8 +100,8 @@ So you could easily delete or switch out libs just by removing the link tags.
 
 Do what you wish with this theme.  
 Want to use it for your personal blog? **Cool!**. Like to use it as a starter theme? **Great!**. Want to chop it up, add/remove stuff and use it in client work? **sure, go for it!**  
-Feel free to use this theme anyway you want.
-You could, if you wanted, refer to this theme/repo or me on you page somewhere, you don't have to but it would be cool if you did.
+Feel free to use this theme anyway you want.  
+(You could, if you wanted, refer to this theme/repo or me on you page somewhere, you don't have to but it would be cool if you did.)
 
 I would love to hear if you use it for something somewhere & and shoot me an email if you find any bugs.
 
