@@ -1,5 +1,7 @@
 # Maldonado Theme
 
+_Note: This theme is for Statamic v.1_
+
 **Maldonado** is a free blog theme made with simplicity in mind. Just the basics pretty much.  
 It's made for the awesome [Statamic](http://statamic.com/) CMS, so to use it in the wild you do need to [buy a license from their website](https://store.statamic.com/).
 
